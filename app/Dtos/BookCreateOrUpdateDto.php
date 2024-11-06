@@ -6,18 +6,18 @@ class BookCreateOrUpdateDto
 {
     private string $title;
     private string $author;
-    private string $description;
+    private ?string $description;
     private int $publicationYear;
 
     public function __construct(
         string $title,
         string $author,
-        string $description,
+        ?string $description,
         int $publicationYear
     ) {
         $this->title = $title;
         $this->author = $author;
-        $this->description = $description;
+        $this->description = $description ?? null;
         $this->publicationYear = $publicationYear;
     }
 

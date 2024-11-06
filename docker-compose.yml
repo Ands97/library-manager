@@ -54,6 +54,14 @@ services:
     networks:
       - library_manager-network
 
+  adminer:
+    image: adminer
+    restart: always
+    networks:
+      - library_manager-network
+    ports:
+      - 8081:8080
+
 networks:
   library_manager-network:
     driver: bridge

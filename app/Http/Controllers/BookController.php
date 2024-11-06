@@ -67,7 +67,7 @@ class BookController extends Controller
 
             $this->bookService->createBook($bookDto);
 
-            return redirect()->route('books.index')->with('success', 'Book created successfully.');
+            return redirect()->route('books.index')->with('success', 'Livro inserido com sucesso!');
         } catch (\Throwable $th) {
             Log::error("Error to create book", [
                 'error' => $th->getMessage()
@@ -115,7 +115,7 @@ class BookController extends Controller
 
             $this->bookService->updateBook($id, $bookDto);
 
-            return redirect()->route('books.index')->with('success', 'Book updated successfully.');
+            return redirect()->route('books.index')->with('success', 'Livro atualizado com sucesso!');
         } catch (\Throwable $th) {
             Log::error("Error to update book", [
                 'error' => $th->getMessage()
@@ -129,7 +129,7 @@ class BookController extends Controller
         try {
             $this->bookService->deleteBook($id);
 
-            return redirect()->route('books.index')->with('success', 'Book deleted successfully.');
+            return redirect()->route('books.index')->with('success', 'Livro removido com sucesso!');
         } catch (\Throwable $th) {
             Log::error("Error to delete book", [
                 'error' => $th->getMessage()
